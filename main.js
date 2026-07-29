@@ -16,9 +16,12 @@ let itom;
 let quant; 
 let iter; 
 
-for (let conti = input.question("do you want to Start? "); conti != "END"; conti = itom) { 
-    itom = input.question("add item to list? (input 'END' to stop) "); 
-    if (itom != "END") {
+while (itom.toUpperCase != "END") {
+    itom = input.question("add item to list? (input 'END' to stop) ");
+    if (itom.toUpperCase == "END") {
+        console.log("ending... data storing")
+    } else {
+    
     quant = input.questionInt("Quantity? (use negitive numbers to substract) "); 
     iter = inven.findIndex(item => item.includes(itom)); 
     
@@ -31,8 +34,9 @@ for (let conti = input.question("do you want to Start? "); conti != "END"; conti
 
        
     } 
+}
     console.log(inven);
-    }
+    
     
 } 
 
