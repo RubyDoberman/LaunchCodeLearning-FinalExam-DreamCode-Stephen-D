@@ -12,16 +12,18 @@ if (fs.existsSync(FILE_PATH)) {
     }
 }
 
-let itom; 
+let itom = ""; 
 let quant; 
 let iter; 
 
-while (itom.toUpperCase != "END") {
+while (itom.toUpperCase() !== "END") {
     itom = input.question("add item to list? (input 'END' to stop) ");
-    if (itom.toUpperCase == "END") {
+    console.log(itom);
+    if (itom.toUpperCase() == "END") {
         console.log("ending... data storing")
+        break;
     } else {
-    
+         
     quant = input.questionInt("Quantity? (use negitive numbers to substract) "); 
     iter = inven.findIndex(item => item.includes(itom)); 
     
@@ -34,7 +36,9 @@ while (itom.toUpperCase != "END") {
 
        
     } 
+   
 }
+
     console.log(inven);
     
     
@@ -43,4 +47,9 @@ while (itom.toUpperCase != "END") {
 // 2. Save your inventory back to the file
 fs.writeFileSync(FILE_PATH, JSON.stringify(inven, null, 2), 'utf8');
 
-console.log(`this is your completed inventory: ${inven} Have a lovely day`);
+
+console.log(`this is your completed inventory:`);
+for (const ite of inven) {
+    console.log(ite);
+}
+console.log("have a lovely day!");
