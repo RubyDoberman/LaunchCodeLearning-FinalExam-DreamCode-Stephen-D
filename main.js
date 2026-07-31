@@ -18,6 +18,7 @@ let iter;
 
 while (itom.toUpperCase() !== "END") {
     itom = input.question("add item to list? (input 'END' to stop) ");
+    itom = itom.replaceAll(" ", "");
     console.log(itom);
     if (itom.toUpperCase() == "END") {
         console.log("ending... data storing")
