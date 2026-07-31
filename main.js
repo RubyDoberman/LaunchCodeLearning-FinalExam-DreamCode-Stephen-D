@@ -55,12 +55,15 @@ fs.writeFileSync(FILE_PATH, JSON.stringify(inven, null, 2), 'utf8');
 
 console.log(`this is your completed inventory:`);
 //pardom me i forgot to push this
-//for (const ite of inven) {
-//    console.log(ite);
-//} this is the old code i replaced while going through the optional lession
-inven.array.forEach(element => {
-  console.log(element);
+//okay i fixed it really should have waited to submit this but the functioning version i forgot to push and was on a different machine and i needed to add these comments too
+inven.forEach(ite => {
+  console.log(ite);
 });
+
+//for (const ite of inven) {
+ //   console.log(ite);
+//} // i had for each here but it stopped working ill get back to it this loop works fine but that above is cleaner if i didnt mess it up a few times
+
 
 
 console.log("have a lovely day!");
