@@ -58,8 +58,9 @@ console.log(`this is your completed inventory:`);
 //for (const ite of inven) {
 //    console.log(ite);
 //} this is the old code i replaced while going through the optional lession
-inven.array.forEach(element => { //i wanted to use for each here because its cleaner
-    console.log(element);
+inven.array.forEach(element => {
+  console.log(element);
 });
+
 
 console.log("have a lovely day!");
