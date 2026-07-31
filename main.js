@@ -39,6 +39,7 @@ while (itom.toUpperCase() !== "END") {
    
 }
 
+    inven.sort();
     console.log(inven);
     
     
