@@ -32,9 +32,9 @@ while (itom.toUpperCase() !== "END") { // at first everything was a for loop bec
     iter = inven.findIndex(item => item.includes(itom)); // this right here is why itom cannot be called item but finding the index to use for later
     
     if (iter == -1) { // if its not already on the list this one is important for adding item
-        inven.push(`${itom} ${quant}`); // we all know pushing adds something to the end of the array
+        inven.push(`${itom} ${quant}`); // we all know pushing adds something to the end of the array i alos prefer the entire `` strings they clean up the code block which i switched this to after that lesson
     } else { 
-        let parts = inven[iter].split(" "); // this is the fun part lets change something and we start by seperating itom and quant
+        let parts = inven[iter].split(" "); // this is the fun part lets change something and we start by seperating itom and quant at the " "
         let oldQuant = Number(parts[parts.length - 1]); //this is accessing the second part of parts aka the number at the end
         inven[iter] = `${itom} ${oldQuant + quant}`; //putting it all back together making sure they are adding or subtracting if you used a negative number
 
