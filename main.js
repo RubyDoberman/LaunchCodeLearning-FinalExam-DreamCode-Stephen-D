@@ -44,16 +44,17 @@ while (itom.toUpperCase() !== "END") { // at first everything was a for loop bec
     if (iter == -1) { // if its not already on the list this one is important for adding item
         inven.push(`${itom} ${quant}`); // we all know pushing adds something to the end of the array i alos prefer the entire `` strings they clean up the code block which i switched this to after that lesson, the push method just adds a variable to the end of the array in this case we are adding a combined string of itom and quant seperated by a space which will be important for later
     } else { 
-        let parts = inven[iter].split(" "); // this is the fun part lets change something and we start by seperating itom and quant at the " "
-        let oldQuant = Number(parts[parts.length - 1]); //this is accessing the second part of parts aka the number at the end
-        inven[iter] = `${itom} ${oldQuant + quant}`; //putting it all back together making sure they are adding or subtracting if you used a negative number
+        let parts = inven[iter].split(" "); // this is the fun part lets change something and we start by seperating itom and quant at the " ", this is why it was so important to remove the spaces and add that one space earlier the split method takes a string and splits it to an array anywhere it finds a specified character in this case a space we need to access the number and sting seperately here to add quant to the pre existing quantity of the item in question
+        let oldQuant = Number(parts[parts.length - 1]); //this is accessing the second part of parts aka the number at the end, we are essentially specifying that we want to work with the end of the array split created so we can just use the number and then we are setting it to a new variable valled oldQuant because its the previous quantity before adding the new quantity to it we are also using the number function to ensure that oldQuant is a number not a string
+        inven[iter] = `${itom} ${oldQuant + quant}`; //putting it all back together making sure they are adding or subtracting if you used a negative number this is the reason for all the previous splitting if old quant is not a number it wont add them together it will add them as a string which means best to show than describe "34" + "2" = "342" but 34 + 2 = 36 so we need to make sure we are working with numbers and not strings
 
        
     } 
    
 }
 
-    inven.sort(); // sorting the list alphabetically for readabillity 
+    inven.sort(); // sorting the list alphabetically for readabillity that is what the sort command does it sorts based on what is in the paranthesis but it defaults to alphabetically and what is what i needed to we let them empty
+
     console.log(inven); // loging it
     
     
@@ -61,6 +62,7 @@ while (itom.toUpperCase() !== "END") { // at first everything was a for loop bec
 
 // more turorial stuff
 fs.writeFileSync(FILE_PATH, JSON.stringify(inven, null, 2), 'utf8');
+//this is sending the string to the json file allowing the variables to be saved between runs of the code
 
 
 console.log(`this is your completed inventory:`);
@@ -69,11 +71,13 @@ console.log(`this is your completed inventory:`);
 inven.forEach(ite => {
   console.log(ite);
 });
+// this is a basic loop that loops once for every item in an array ite is the item of the array i clicked off in the middle of naming it and ran with the name but is looping for every item in the array and loging the item in the console using console.log
 
 //for (const ite of inven) {
  //   console.log(ite);
-//} // i had for each here but it stopped working ill get back to it this loop works fine but that above is cleaner if i didnt mess it up a few times
+//} // i had for each here but it stopped working ill get back to it this loop works fine but that above is cleaner if i didnt mess it up a few times its a for of loop that essentially does the same thing as the loop above but not as clean
 
 
 
-console.log("have a lovely day!");
+
+console.log("have a lovely day!"); // and that is it 
